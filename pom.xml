@@ -2,13 +2,31 @@
   xsi:schemaLocation="http://maven.apache.org/POM/3.5.2 http://maven.apache.org/maven-v3_5_2.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>gym</artifactId>
-  <packaging>war</packaging>
+  <artifactId>web-project</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>gym</name>
-  <url>http://maven.apache.org</url>
+  <packaging>war</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
   <build>
-    <finalName>gym</finalName>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
 
